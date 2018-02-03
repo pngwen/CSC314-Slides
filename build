@@ -1,0 +1,21 @@
+#!/bin/bash
+# Build both the handout and the presentation version of a given
+# slide show document in both handout and normal modes
+
+function handout-build() {
+    pdflatex -jobname $1-handout "\\def\\HANDOUT{}\\input{$1}"
+}
+
+function presentation-build() {
+    pdflatex $1.tex
+}
+
+
+#get the stripped name of a file for a jobname
+jobname="${1%.*}"
+
+#build the handout (3-times just to be sure)
+handout-build $jobname && handout-build $jobname && handout-build $jobname
+
+#build the presentation (3-times just to be sure)
+presentation-build $jobname && presentation-build $jobname && presentation-build $jobname
