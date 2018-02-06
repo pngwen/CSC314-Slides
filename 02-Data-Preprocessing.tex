@@ -124,14 +124,14 @@ We have options:
   \hline
   Sports & 25 \\
   News & 38 \\
-  Footbal & 1\\
+  Football & 1\\
   \end{tabular}
 \end{columns}
 \end{frame}
 
 
 \section{Data Transformation}
-\begin{frame}{Overfitting and The Allure of Big Values}
+\begin{frame}{Over-fitting and The Allure of Big Values}
 \begin{itemize}[<+->]
   \item Large values can dominate data mining models.
   \item Some machine learning techniques will assign greater influence to large values.
@@ -172,7 +172,7 @@ X^*_{mm} = \displaystyle\frac{X - \mathrm{min}(X)}{\mathrm{max}(X) - \mathrm{min
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Z-Score Standardizaion}
+\begin{frame}{Z-Score Standardization}
 \[
 z = \displaystyle\frac{x-\bar{x}}{s}
 \]
@@ -193,8 +193,6 @@ X^*_{\mathrm{decimal}} = \displaystyle\frac{X}{10^d}
 \end{itemize}
 \end{frame}
 
-
-\section{Variable Removal}
 \begin{frame}{Variables to Remove}
   \begin{itemize}[<+->]
     \item Unary variables.
@@ -213,8 +211,9 @@ X^*_{\mathrm{decimal}} = \displaystyle\frac{X}{10^d}
     If only 5\% of data values are missing
     from a data set of 30 variables, and the missing values are
     spread evenly throughout the data, almost 80% of the records would
-    have at least one missing value."
-    {\tiny \em --Gallit Shmueli, Nitin Patel, and Peter Bruce, Data Mining for
+    have at least one missing value.
+
+   {\tiny \em --Gallit Shmueli, Nitin Patel, and Peter Bruce, Data Mining for
       Business Intelligence, 2nd edition, John Wiley and Sons, 2010. }
   \end{block}
     \end{itemize}
