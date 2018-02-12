@@ -104,7 +104,7 @@ p = P(x | H)
 
 \begin{frame}{Getting to Know the Data}
 \begin{itemize}[<+->]
-   \item The second step in analyzing data is to perform exploratoray analysis.
+   \item The second step in analyzing data is to perform exploratory data analysis (EDA).
    \item Do you remember what the first step was?
    \item Exploratory Techniques
    \begin{itemize}
@@ -117,13 +117,15 @@ p = P(x | H)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{What Are We Interested In?}[<+->]
+\begin{frame}{What Are We Interested In?}
+\begin{itemize}[<+->]
     \item Typically, we are searching for explanatory factors for some target variable.
     \item A factor is a subset of variables in a record.
     \item Typically, the most interesting relationships are multivariate.
     \item In EDA, we are trying to find the multivariate factors we wish to model.
     \item Example: What factors seem to cause customers to leave our company for other
         phone companies? (Target: churn)
+\end{itemize}
 \end{frame}
 
 
@@ -134,8 +136,8 @@ p = P(x | H)
     \item Explore and understand the variables.
     \item Quantify the target variable.
     \item Explore suspected pairings of variables.
-    \item Explore suspected multi-variate groupings of variables.
-    \item In each exploration, using graphical and numerical techniques.
+    \item Explore suspected multivariate groupings of variables.
+    \item In each exploration, use graphical and numerical techniques.
     \item Report findings / Identify interesting factors to model.
 \end{enumerate}    
 \end{frame}
@@ -160,9 +162,9 @@ p = P(x | H)
 \column[t]{0.5\textwidth}
    {\scriptsize
    \begin{description}
-     \item[Total even minutes] Continuous
+     \item[Total eve minutes] Continuous
      \item[Total eve calls] Integer
-     \item[Total even charge] Continuous
+     \item[Total eve charge] Continuous
      \item[Total night minutes] Continuous
      \item[Total night calls] Integer
      \item[Total night charge] Continuous
@@ -264,17 +266,73 @@ p = P(x | H)
     \includegraphics[height=0.8\textheight]{images/scatter-minutes-calls}
 \end{frame}
 
-\begin{frame}{Correlations and P-Values}
+
+\subsection{Regression Analysis}
+\begin{frame}{Scatterplot Matrix}
+    \centering
+    \includegraphics[height=0.8\textheight]{images/scatter-call-charge}
 \end{frame}
 
+\begin{frame}[fragile]{Regression of Day Charge vs Day Minutes}
+\scriptsize
+\begin{verbatim}
+Call:
+lm(formula = churn$Day.Charge ~ churn$Day.Mins)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0045935 -0.0025391  0.0004326  0.0024587  0.0045224 
+
+Coefficients:
+                Estimate Std. Error   t value Pr(>|t|)    
+(Intercept)    6.134e-04  1.711e-04 3.585e+00 0.000341 ***
+churn$Day.Mins 1.700e-01  9.108e-07 1.866e+05  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.002864 on 3331 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:      1 
+F-statistic: 3.484e+10 on 1 and 3331 DF,  p-value: < 2.2e-16
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Correlation Matrix}
+\small
+\begin{tabular}{r|rrrrr}
+& ALength & VMessage & DMins & DCalls & CustCalls\\
+\hline
+ALength & 1.0000 & -0.0046  & 0.0062  & 0.0385 & -0.0038 \\
+VMessage &  -0.0046 & 1.0000 &  0.0008 & -0.0095 & -0.0133\\
+DMins & 0.0062 & 0.0008 & 1.0000 & 0.0068 & -0.0134\\
+DCalls &  0.0385 & -0.0095 & 0.0068 & 1.0000 & -0.0189\\
+CustCalls & -0.0038 & -0.0133 & -0.0134 & -0.0189 & 1.0000\\
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Correlation P-Values}
+\small
+\begin{tabular}{r|rrrrr}
+& ALength & VMessage & DMins & DCalls & CustCalls\\
+\hline
+ALength & 0.0000 & 0.7894 & 0.7198 & 0.0264 & 0.8266\\
+VMessage &  0.7894 & 0.0000 & 0.9642 & 0.5816 & 0.4440\\
+DMins & 0.7198 & 0.9642 & 0.0000 & 0.6969 & 0.4385\\
+DCalls &  0.0264 & 0.5816 & 0.6969 & 0.0000 & 0.2743\\
+CustCalls & 0.8266 & 0.4440 & 0.4385 & 0.2743 & 0.0000\\
+\end{tabular}
+\end{frame}
+
+
 \section{Homework}
-\begin{frame}{Homework Assignment #2}
+\begin{frame}{Homework Assignment \#2}
+
   {\bf Due:} February 20, 2018
   \begin{itemize}
     \item P.89 3-6
     \item P.90 21-26, 30-32, 35
   \end{itemize}
 \end{frame}
+
 \end{document}
 
 
