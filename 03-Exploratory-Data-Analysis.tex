@@ -80,21 +80,86 @@
 
 \section{Motivation and Goals}
 \begin{frame}{Hypothesis Testing}
+\[
+p = P(x | H)
+\]
+\[
+   P(\textrm{Reject } H | H) = P(p \leq \alpha | H)
+\]
+\begin{itemize}[<+->]
+   \item Hypothesis testing is based on {\em posterior probabilities}.
+   \item Hypothesis testing depends on {\em a priori} knowledge ($H_0$ and $H$)
+   \item How do we get a hypothesis to test in the first place?
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Hypothesis Formation}
+\begin{itemize}[<+->]
+   \item We are searching for relationships among subsets of variables.
+   \item Often, we have an intuitive suspicion of associations.
+   \item What about when the data are from outside our realm of expertise?
+   \item What about situations where unexpected relationships exist?
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Getting to Know the Data}
-\end{frame}
-
-\begin{frame}{Churn Data Set Variables}
+\begin{itemize}[<+->]
+   \item The second step in analyzing data is to perform exploratoray analysis.
+   \item Do you remember what the first step was?
+   \item Exploratory Techniques
+   \begin{itemize}
+        \item Variable Descriptions
+        \item Descriptive Statistics
+        \item Graphical Exploration
+        \item Regression Tests
+        \item P-Value Tests
+   \end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{What Are We Interested In?}
+
 \end{frame}
 
+
+
 \section{Exploring the Data}
+\begin{frame}[t]{Churn Data Set Variables}
+\begin{columns}
+\column[t]{0.5\textwidth}
+   {\scriptsize
+   \begin{description}
+     \item[State] Categorical (50 States and DC)
+     \item[Account length] Integer - How long the account has been active
+     \item[Area code] categorical
+     \item[Phone number] customer ID
+     \item[International plan] Categorical yes or no
+     \item[Voice mail plan] Categorical yes or no
+     \item[Number of voice mail message] Integer
+     \item[Total day minutes] Continuous
+     \item[Total day calls] Integer
+     \item[Total day charge] Continuous
+   \end{description}
+   }
+\column[t]{0.5\textwidth}
+   {\scriptsize
+   \begin{description}
+     \item[Total even minutes] Continuous
+     \item[Total eve calls] Integer
+     \item[Total even charge] Continuous
+     \item[Total night minutes] Continuous
+     \item[Total night calls] Integer
+     \item[Total night charge] Continuous
+     \item[Total international minutes] Continuous
+     \item[Total international calls] Integer
+     \item[Total international charge] Continuous
+     \item[Number of calls to customer service] Integer
+     \item[Churn] Indicator of whether the customer has left the company (true or false).
+  \end{description}
+  }
+\end{columns}
+\end{frame}
+
 \begin{frame}{Summarize the Churners}
 \begin{columns}
 \column{0.5\textwidth}
