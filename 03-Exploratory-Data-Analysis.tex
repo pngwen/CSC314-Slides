@@ -117,13 +117,29 @@ p = P(x | H)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{What Are We Interested In?}
-
+\begin{frame}{What Are We Interested In?}[<+->]
+    \item Typically, we are searching for explanatory factors for some target variable.
+    \item A factor is a subset of variables in a record.
+    \item Typically, the most interesting relationships are multivariate.
+    \item In EDA, we are trying to find the multivariate factors we wish to model.
+    \item Example: What factors seem to cause customers to leave our company for other
+        phone companies? (Target: churn)
 \end{frame}
 
 
 
 \section{Exploring the Data}
+\begin{frame}{EDA - Loose Procedure}
+\begin{enumerate}[<+->]
+    \item Explore and understand the variables.
+    \item Quantify the target variable.
+    \item Explore suspected pairings of variables.
+    \item Explore suspected multi-variate groupings of variables.
+    \item In each exploration, using graphical and numerical techniques.
+    \item Report findings / Identify interesting factors to model.
+\end{enumerate}    
+\end{frame}
+
 \begin{frame}[t]{Churn Data Set Variables}
 \begin{columns}
 \column[t]{0.5\textwidth}
@@ -248,7 +264,17 @@ p = P(x | H)
     \includegraphics[height=0.8\textheight]{images/scatter-minutes-calls}
 \end{frame}
 
+\begin{frame}{Correlations and P-Values}
+\end{frame}
+
 \section{Homework}
+\begin{frame}{Homework Assignment #2}
+  {\bf Due:} February 20, 2018
+  \begin{itemize}
+    \item P.89 3-6
+    \item P.90 21-26, 30-32, 35
+  \end{itemize}
+\end{frame}
 \end{document}
 
 
